@@ -1,15 +1,3 @@
-// ========================================= util
-function getDates(month, year) {
-  const date = new Date(year, month, 1);
-  const days = [];
-
-  while (date.getMonth() === month) {
-    days.push(new Date(date));
-    date.setDate(date.getDate() + 1);
-  }
-  return days;
-}
-
 // ========================================= data
 
 let current = new Date(new Date().getFullYear(), new Date().getMonth());
@@ -29,6 +17,19 @@ const MONTHS = {
   10: 'November',
   11: 'December',
 };
+
+// ========================================= util
+function getDates(month, year) {
+  const date = new Date(year, month, 1);
+  const days = [];
+
+  while (date.getMonth() === month) {
+    days.push(new Date(date));
+    date.setDate(date.getDate() + 1);
+  }
+  return days;
+}
+
 
 // ========================================= actions
 
