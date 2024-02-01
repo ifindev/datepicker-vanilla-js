@@ -1,5 +1,6 @@
 // ========================================= data
 
+const today = new Date(new Date().getFullYear(), new Date().getMonth());
 let current = new Date(new Date().getFullYear(), new Date().getMonth());
 let selected = null;
 
@@ -121,23 +122,24 @@ function renderCalendar() {
 
     // Add style for today
     if (
-      dates[i].getDate() === current.getDate() &&
-      dates[i].getMonth() === currentMonth &&
-      dates[i].getFullYear() === currentYear &&
+      dates[i].getDate() === today.getDate() &&
+      dates[i].getMonth() === today.getMonth() &&
+      dates[i].getFullYear() === today.getFullYear() &&
       selected === null
     ) {
       date.className = baseClass + 'rounded border bg-blue-600 text-white';
     }
 
     if (
-      dates[i].getDate() === current.getDate() &&
-      dates[i].getMonth() === currentMonth &&
-      dates[i].getFullYear() === currentYear &&
+      dates[i].getDate() === today.getDate() &&
+      dates[i].getMonth() === today.getMonth() &&
+      dates[i].getFullYear() === today.getFullYear() &&
       selected !== null
     ) {
       date.className = baseClass + 'rounded border border-gray-600';
     }
 
+    // Style for selected
     if (
       selected &&
       dates[i].getDate() === selected.getDate() &&
