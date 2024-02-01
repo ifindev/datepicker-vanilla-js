@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Datepicker</title>
+  </head>
+  <body>
+    <div class="flex items-center justify-center h-screen">
+      <!-- Wrapper -->
+      <div class="w-[400px] h-[400px] border border-grey-800 rounded p-3">
+        <!-- Header Navigation -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <button class="border border-grey-300 rounded py-1 px-2"><<</button>
+            <button
+              onclick="prevMonth()"
+              class="border border-grey-300 rounded py-1 px-2"
+            >
+              <
+            </button>
+          </div>
+          <span id="current"></span>
+          <div class="flex items-center gap-2">
+            <button
+              onclick="nextMonth()"
+              class="border border-grey-300 rounded py-1 px-2"
+            >
+              >
+            </button>
+            <button class="border border-grey-300 rounded py-1 px-2">>></button>
+          </div>
+        </div>
+
+        <!-- Calendar -->
+        <div id="calendar"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
