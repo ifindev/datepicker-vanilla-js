@@ -30,7 +30,6 @@ function getDates(month, year) {
   return days;
 }
 
-
 // ========================================= actions
 
 function prevMonth() {
@@ -40,6 +39,16 @@ function prevMonth() {
 
 function nextMonth() {
   current.setMonth(current.getMonth() + 1);
+  render();
+}
+
+function prevYear() {
+  current.setFullYear(current.getFullYear() - 1);
+  render();
+}
+
+function nextYear() {
+  current.setFullYear(current.getFullYear() + 1);
   render();
 }
 
