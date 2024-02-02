@@ -1,7 +1,7 @@
 // ========================================= data
 
-const today = new Date(new Date().getFullYear(), new Date().getMonth());
-let current = new Date(new Date().getFullYear(), new Date().getMonth());
+const today = new Date();
+let current = new Date();
 let selected = null;
 
 const MONTHS = {
@@ -78,7 +78,7 @@ function renderCalendar() {
   // generate days
   for (i = 0; i < DAYS.length; i++) {
     const day = document.createElement('span');
-    day.className = 'text-center py-2';
+    day.className = 'text-center p-1';
     day.append(DAYS[i]);
     calendar.append(day);
   }
@@ -103,6 +103,7 @@ function renderCalendar() {
     dates.splice(dates.length, 0, '');
   }
 
+  const baseClass = 'text-center p-1 rounded ';
   for (i = 0; i < dates.length - 1; i++) {
     if (dates[i] === '') {
       const whitespace = document.createElement('span');
@@ -114,10 +115,9 @@ function renderCalendar() {
 
     // date is button element so that we can select it later
     const date = document.createElement('button');
-    date.className = 'text-center py-2 rounded';
+    date.className = baseClass;
     date.append(dates[i].getDate());
 
-    const baseClass = 'text-center py-2 ';
     date.className = baseClass;
 
     // Add style for today
@@ -127,7 +127,7 @@ function renderCalendar() {
       dates[i].getFullYear() === today.getFullYear() &&
       selected === null
     ) {
-      date.className = baseClass + 'rounded border bg-blue-600 text-white';
+      date.className = baseClass + 'border bg-blue-600 text-white';
     }
 
     if (
@@ -136,7 +136,7 @@ function renderCalendar() {
       dates[i].getFullYear() === today.getFullYear() &&
       selected !== null
     ) {
-      date.className = baseClass + 'rounded border border-gray-600';
+      date.className = baseClass + 'border border-gray-600 p-0';
     }
 
     // Style for selected
